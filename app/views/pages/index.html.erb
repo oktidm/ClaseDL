@@ -1,14 +1,51 @@
-<h1>Hola!! soy la página</h1>
+<div class="jumbotron">
+	<div class="container">
+	<h1>Hola soy la página</h1>
+	<p>...</p>
+	<p><a class="btn btn-success glyphicon glyphicon-tree-deciduous" href="#" role="button">Más y más y más <span class="glyphicon glyphicon-tree-deciduous" style="font-size: 30px; color:#661141"> </a>
+		</span>
+	</p>
+	</div>
+</div>
 
-<%= image_tag("foto.jpg") %>
-<img src="<%= asset_path('foto.jpg') %>">
+<div class="container">
+	<div class="row">
+		<div class="col-md-4"> 
+<div class="page-header">
+  <h2 style="display:inline">Example page</h2>
+  <span class="label label-default">New</span></h3>
+</div>
+			<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+		<div class="col-md-4"> 
+<div class="page-header">
+  <h2>Example page header</h2>
+</div>
+			<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+	<div class="col-md-4"> 
+		<div class="page-header">
+  <h2>Example page header</h2>
+</div>
+	<img src="<%= asset_path('foto.jpg')%>" class="img-responsive">
+	<a href="<%= pages_index_path %>" title=""> hola </a>
+	<%= link_to "hola", pages_index_path %>
+	<ul> 
+		<% @a.each do |ele| %>
+		<li> <%= ele * 2 %> </li>
+		<% end %>
+	</ul>
+</div>
 
-<a href="<%= pages_index_path %>" title=""> hola </a>
+</div>
 
-<%= link_to "hola", pages_index_path %>
+</div>
 
-<ul> 
-	<% @a.each do |ele| %>
-	<li> <%= ele * 2 %> </li>
-	<% end %>
-</ul>
