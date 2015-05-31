@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
+  resources :pins
   resources :posts
   get 'pages/index'
-
   get 'pages/about'
   get 'pages/us'
 
