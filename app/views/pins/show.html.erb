@@ -1,8 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Name:</strong>
+  <%= @pin.name %>
+</p>
+
+<p>
   <strong>Photo:</strong>
-  <%= @pin.photo %>
+  <%= image_tag(@pin.photo, :style => 'width:250px') %>
 </p>
 
 <p>
@@ -12,3 +17,5 @@
 
 <%= link_to 'Edit', edit_pin_path(@pin) %> |
 <%= link_to 'Back', pins_path %>
+
+<%= link_to "Mas pins del mismo usuario", pinsof_path(@pin.user.id) %>
