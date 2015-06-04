@@ -1,14 +1,29 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
-  <%= @post.title %>
+	<strong>Title:</strong>
+	<%= @post.title %>
 </p>
 
 <p>
-  <strong>Content:</strong>
-  <%= @post.content %>
+	<strong>Content:</strong>
+	<%= @post.content %>
 </p>
+
+<%= form_for [@post, @comment] do |f| %>
+<%= f.label :content %>
+<%= f.text_area :content %>
+
+<%= f.submit "Publish comment" %>
+<% end %>
+
+<% @post.comments.find_each do |c| %>
+<%= c.content %>
+<% end %>
+
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
+
+<%= render 'comments/form' %>
+<%= render partial: "comments/comment", collection: @last_comments %>
