@@ -5,3 +5,18 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+User.destroy_all
+Post.destroy_all
+Comment.destroy_all
+
+user = User.create(email:"oktidm@gmail.com", password:"12345678")
+
+10.times do |i|
+	post = user.posts.build(title:"Post #{i}", content: "Soy el post #{i} creado por Okti")
+	10.times do
+		comment = post.comments.build(user:user, content:"Soy el content!!!")
+		comment.save
+	end
+	post.save
+end

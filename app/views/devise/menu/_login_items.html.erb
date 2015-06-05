@@ -3,6 +3,11 @@
   <li>
   <%= link_to('Logout2', destroy_user_session_path, method: :delete) %>        
   </li>
+<li>
+	<%= current_user.email %>
+
+</li>
+
 <% else %>
   <li>
   <%= link_to('Login2', new_user_session_path)  %>  
