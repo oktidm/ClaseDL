@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   get 'comments/create'
-
   devise_for :users
   resources :pins
   resources :posts
@@ -19,6 +18,7 @@ Rails.application.routes.draw do
   root 'pages#index'
   get 'mypins' => 'pins#mypins'
   get 'pinsof/:user_id' => 'pins#pinsof', :as => "pinsof"
+  # get 'pins' 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

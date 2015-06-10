@@ -5,7 +5,7 @@ class PinsController < ApplicationController
   def pinsof
     @user_id = params[:user_id]
     @user = User.find(@user_id)
-    @pins = user.pins 
+    @pins = @user.pins
   end
 
   def mypins
