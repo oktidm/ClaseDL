@@ -19,7 +19,7 @@ load_and_authorize_resource
 	end
 
 	def comment_params
-			params.require(:comment).permit(:content)
+			params.require(:comment).permit(:content, :photo, :photo_cache)
 		end
 
 	def load_post
