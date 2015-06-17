@@ -10,6 +10,14 @@
 	<%= @post.content %>
 </p>
 
+
+
+<p>
+	<strong>Votes:</strong>
+	<%= @post.votes.count %>
+</p>
+
+
 <%= form_for [@post, @comment] do |f| %>
 <%= f.label :content %>
 <%= f.text_area :content %>
@@ -21,6 +29,7 @@
 <%= c.content %>
 <% end %>
 
+<%= link_to "+1", upvote_post_path(@post) %>
 
 <% if can?(:edit, @post) %>
 <%= link_to 'Edit', edit_post_path(@post) %> |
@@ -29,3 +38,5 @@
 
 <%= render 'comments/form' %>
 <%= render partial: "comments/comment", collection: @last_comments %>
+
+

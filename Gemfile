@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 gem 'activeadmin', github: 'activeadmin'
+gem 'dotenv-rails'
 
 # Use sqlite3 as the database for Active Record
 gem 'pg'
@@ -38,6 +39,10 @@ gem 'devise'
 gem 'cancancan', '~> 1.10'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'comments/create'
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
+  resources :finish_signup, only: [:edit, :update]
   resources :pins
   resources :posts
   get 'pages/index'
@@ -9,6 +10,9 @@ Rails.application.routes.draw do
   get "pages/index"
 
   resources :posts do
+    member do
+      get 'upvote'
+    end
     resources :comments, only: :create 
   end
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,6 +1,14 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
+
+  # el modelo de usuario debe incluir
+  # :omniauthable, omniauth_providers: [:twitter, :facebook] 
+  config.omniauth :facebook, ENV['FACEBOOK_API_ID'], ENV['FACEBOOK_SECRET_KEY']
+  config.omniauth :twitter, ENV['TWITTER_API_ID'], ENV['TWITTER_SECRET_KEY']
+  
+
+
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
@@ -96,7 +104,7 @@ Devise.setup do |config|
   # a value less than 10 in other environments. Note that, for bcrypt (the default
   # encryptor), the cost increases exponentially with the number of stretches (e.g.
   # a value of 20 is already extremely slow: approx. 60 seconds for 1 calculation).
-  config.stretches = Rails.env.test? ? 1 : 10
+config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
   # config.pepper = '84529d16ea81f5fac84d0a55aa972d8c499565b6bf01bf1d9e796dc03a4a9b529452339f6da0b7f12add272274f24f6153e068d8bce70312b4e0f6e7e54b555e'
