@@ -6,7 +6,13 @@ class PostsController < ApplicationController
 # GET /posts
 # GET /posts.json
 def index
-  @posts = Post.all
+
+  @q = params[:q]
+  if params[:q]
+    @posts = Post.where(title:@q)
+  else
+    @posts = Post.all
+  end
 end
 
 # GET /posts/1
